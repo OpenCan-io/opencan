@@ -1,4 +1,4 @@
-<img src="https://sdk.dfinity.org/_/img/logo.svg" />
+![Screenshot](img/dfinity-logo.svg)
 
 # Getting Started
 
@@ -39,7 +39,7 @@ npm run dev
 ```
 Thats it! The counter demo is persisted on your local Internet Computer.
 
-<img width=500 src="https://cdn.discordapp.com/attachments/748420568268800060/835322875690221578/unknown.png" />
+![Screenshot](img/example.png)
 
 ## [Experimental] Watch mode for canisters
 This will auto build and install your canisters whenever you make a change to them
