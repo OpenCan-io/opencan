@@ -14,7 +14,7 @@ pip install mkdocs
 
 theme
 ```bash
-mkdocs-material
+pip install mkdocs-material
 ```
 
 run locally 
