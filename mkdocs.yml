@@ -1,0 +1,9 @@
+site_name: OpenCan
+nav:
+  - 'index.md'
+  - 'Getting Started.md'
+  - 'DIP20.md'
+  - 'DIP721.md'
+  - 'Fungible Token.md'
+theme:
+  name: material
