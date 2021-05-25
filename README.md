@@ -7,6 +7,7 @@ mac
 brew install mkdocs
 ```
 
+linux 
 ```bash
 pip install mkdocs
 ```
