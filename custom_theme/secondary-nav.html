@@ -1,0 +1,14 @@
+<nav class="bd-subnavbar py-2" aria-label="Secondary navigation">
+  <div class="container-xxl d-flex align-items-md-center">
+    {%- block search_button %}
+    {%- if 'search' in config['plugins'] %}
+      <a class="nav-link bd-search position-relative me-auto" href="#" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+        <i class="fa fa-search"></i> Search
+      </a>
+    {%- endif %}
+    {%- endblock %}
+
+
+    {% include "nav-toggle.html" %}
+  </div>
+</nav>

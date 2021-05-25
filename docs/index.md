@@ -1,19 +1,13 @@
-# Introduction
+<img src="https://sdk.dfinity.org/_/img/logo.svg" />
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+## Introduction
 
-## Commands
+Explore our guides and examples to integrate OpenCan security products to all aspects of your Internet Computer (IC) development and operations.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+## Explore using OpenCan
+
+OpenCan provides a complete suite of security products to build, manage, and inspect all aspects of software development and operations for IC projects.
+
 
 ## Project layout
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md
-        img/
-            
-        

@@ -1,0 +1,33 @@
+<aside class="bd-sidebar">
+  <nav class="collapse bd-links" id="bd-docs-nav" aria-label="Docs navigation">
+    <ul class="list-unstyled mb-0 py-3 pt-md-1">
+
+  {% for nav_item in nav %}
+<li class="mb-1">
+  <button class="btn d-inline-flex align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#{{ nav_item.title }}-collapse" aria-expanded="{% if nav_item.active %}true{% else %}false{% endif %}" aria-current="{% if nav_item.active %}true{% else %}false{% endif %}">
+    {{ nav_item.title }}
+  </button>
+
+{%- if nav_item.children %}
+  <div class="collapse {% if nav_item.active %}show{% endif %}" id="{{ nav_item.title }}-collapse" style="">
+    <ul class="list-unstyled fw-normal pb-1 small">
+      {%- for nav_item in nav_item.children %}
+        <li>
+          <a href="{{ nav_item.url|url }}" class="d-inline-flex align-items-center rounded {% if nav_item.active %}active{% endif %}" {% if nav_item.active %} aria-current="page"{% endif %}>{{ nav_item.title }}</a>
+        </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</li>
+{%- endif %}
+  {% endfor %}
+
+        <li class="my-3 mx-4 border-top"></li>
+        <li>
+          <a href="#" class="d-inline-flex align-items-center rounded">
+            Migration
+          </a>
+        </li>
+    </ul>
+  </nav>
+</aside>
