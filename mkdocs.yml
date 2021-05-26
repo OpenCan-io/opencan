@@ -1,9 +1,13 @@
 site_name: OpenCan
 nav:
-  - Introduction: index.md
-  - Getting Started: GettingStarted.md
-  - DIP20: DIP20.md
-  - DIP721: DIP721.md
-  - Fungible Token: FungibleToken.md
+  - 'Start':
+    - 'Introduction': 'index.md'
+  - 'Learn':
+    - 'Overview': 'learn.md'
+    - 'Creating a new IC app': 'getting-started.md'
+  - 'Tools':
+    - 'fungible-tokens.md'
+    - 'non-fungible-tokens.md'
 theme:
-  name: material
+    name: 'mkdocs'
+    custom_dir: 'custom_theme/'

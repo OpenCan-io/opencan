@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{%- block styles %}
+    <link href="{{ 'css/font-awesome.min.css'|url }}" rel="stylesheet">
+    <link href="{{ 'css/base.css'|url }}" rel="stylesheet">
+    <link href="{{ 'css/bootstrap.min.css'|url }}" rel="stylesheet">
+    <link href="{{ 'css/bootstrap-docs.css'|url }}" rel="stylesheet">
+
+    {%- for path in config['extra_css'] %}
+    <link href="{{ path|url }}" rel="stylesheet">
+    {%- endfor %}
+{%- endblock %}
+
+{%- block libs %}
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="{{ 'js/base.js'|url }}"></script>
+    <script src="{{ 'js/bootstrap.min.js'|url }}"></script>
+{%- endblock %}

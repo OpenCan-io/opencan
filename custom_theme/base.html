@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <script>
+  // Hack for scrolling window when linking to anchor tag with fixed nav header
+        var shiftWindow = function() { scrollBy(0, -75) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+      </script>
+      {%- block site_meta %}
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% if page and page.is_homepage %}<meta name="description" content="{{ config['site_description'] }}">{% endif %}
+        {% if config.site_author %}<meta name="author" content="{{ config.site_author }}">{% endif %}
+        {% if page and page.canonical_url %}<link rel="canonical" href="{{ page.canonical_url }}">{% endif %}
+        {% if config.site_favicon %}<link rel="shortcut icon" href="{{ config.site_favicon|url }}">
+        {% else %}<link rel="shortcut icon" href="{{ base_url }}/img/favicon.ico">{% endif %}
+      {%- endblock %}
+
+      {%- block htmltitle %}
+        <title>{% if page and page.title and not page.is_homepage %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>
+      {%- endblock %}
+
+      {%- block styles %}
+        <link href="{{ 'css/bootstrap.min.css'|url }}" rel="stylesheet">
+        <link href="{{ 'css/font-awesome.min.css'|url }}" rel="stylesheet">
+        <link href="{{ 'css/base.css'|url }}" rel="stylesheet">
+        {%- for path in config['extra_css'] %}
+        <link href="{{ path|url }}" rel="stylesheet">
+        {%- endfor %}
+      {%- endblock %}
+
+      <script src="{{ 'js/bootstrap.min.js'|url }}" defer></script>
+      
+      {%- block extrahead %} {% endblock %}
+    </head>
+
+    <body class="{% if page and page.is_homepage %}homepage {% endif %}{%- if page and page.meta.jumbotron -%}has-jumbotron {%- endif -%}">
+
+      {% include "header.html" %}
+      {% include "secondary-nav.html" %}
+
+      <div class="container-xxl my-md-4 bd-layout">
+        {% include "nav.html" %}
+        <main class="bd-main order-1">
+          <div class="bd-content ps-lg-4">{% include "content.html" %}</div>
+          {% include "toc.html" %}
+        </div>
+      </div>
+
+      <footer class="col-md-12">
+  <hr>
+  <div class="container">
+    {%- block footer %}
+    {%- if config.copyright %}
+    <p>{{ config.copyright }}</p>
+    {%- endif %}
+    {%- endblock %}
+  </div>
+      </footer>
+
+      {%- block scripts %}
+      <script>
+  var base_url = {{ base_url | tojson }},
+            shortcuts = {{ config.theme.shortcuts | tojson }};
+      </script>
+      <script src="{{ 'js/base.js'|url }}" defer></script>
+      {%- for path in config['extra_javascript'] %}
+      <script src="{{ path|url }}" defer></script>
+      {%- endfor %}
+      {%- endblock %}
+
+      {% if 'search' in config['plugins'] %}{%- include "search-modal.html" %}{% endif %}
+      {%- include "keyboard-modal.html" %}
+
+    </body>
+</html>
+{% if page and page.is_homepage %}
+<!--
+MkDocs version : {{ mkdocs_version }}
+Build Date UTC : {{ build_date_utc }}
+-->
+{% endif %}

@@ -1,0 +1,23 @@
+<div class="bd-toc mt-4 mb-5 my-md-0 ps-xl-3 mb-lg-5 text-muted">
+    <strong class="d-block h6 my-2 pb-2 border-bottom">On this page</strong>
+    <nav id="TableOfContents">
+      
+        <ul>
+        {%- for toc_item in page.toc %}
+            <li>
+                <a href="{{ toc_item.url }}">{{ toc_item.title }}</a>
+            </li>
+            {%- if toc_item.children %}
+                <ul>
+                {%- for toc_item in toc_item.children %}
+                    <li>
+                        <a href="{{ toc_item.url }}">{{ toc_item.title }}</a>
+                    </li>
+                {%- endfor %}
+                </ul>
+            {%- endif %}
+        {%- endfor %}
+        </ul>
+
+    </nav>
+</div>
