@@ -1,0 +1,3 @@
+# Fungible Token
+---
+fhfasdiujfhdasuidhasiudhas9iudhasiuodhasudhasiudhasiudhaisudhasiudhasiudhasiudhasiudhasihdiasda
