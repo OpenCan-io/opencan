@@ -1,5 +1,4 @@
-<img src="https://sdk.dfinity.org/_/img/logo.svg" />
-
+![Screenshot](img/dfinity-logo.svg)
 ## Introduction
 
 Explore our guides and examples to integrate OpenCan security products to all aspects of your Internet Computer (IC) development and operations.
