@@ -1,13 +1,9 @@
-body {
-/*    padding-top: 70px;*/
-}
-
-.navbar-brand {
-    /* background-color: #002338; */
-}
-
 .bd-content img {
     max-width: 100%;
+}
+
+a.navbar-brand img {
+    width: 100px;
 }
 .metadata{
     list-style:none;
