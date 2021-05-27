@@ -5,6 +5,9 @@ nav:
   - 'Learn':
     - 'Overview': 'learn.md'
     - 'Creating a new IC app': 'getting-started.md'
+  - 'Tokens':
+    - 'DIP20': 'DIP20.md'
+    - 'DIP721': 'DIP721.md'
   - 'Tools':
     - 'fungible-tokens.md'
     - 'non-fungible-tokens.md'
