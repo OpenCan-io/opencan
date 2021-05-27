@@ -1,6 +1,10 @@
 .bd-content img {
     max-width: 100%;
 }
+
+a.navbar-brand img {
+    width: 100px;
+}
 .metadata{
     list-style:none;
     padding:0;
