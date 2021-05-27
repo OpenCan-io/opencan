@@ -1,4 +1,4 @@
-<img src="https://sdk.dfinity.org/_/img/logo.svg" />
+![Screenshot](img/dfinity-logo.svg)
 
 # Non-Fungible Tokens
 ---
