@@ -5,9 +5,12 @@ nav:
   - 'Learn':
     - 'Overview': 'learn.md'
     - 'Creating a new IC app': 'getting-started.md'
+    - 'Sudograph': 'Sudograph.md'
   - 'Tokens':
     - 'DIP20': 'DIP20.md'
     - 'DIP721': 'DIP721.md'
+    - "Cycles": 'Cycles.md'
+    - "ICIP-1": 'ICIP-1.md'
   - 'Tools':
     - 'fungible-tokens.md'
     - 'non-fungible-tokens.md'
