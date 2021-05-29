@@ -9,7 +9,7 @@ It greatly simplifies [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_
 For example, if you created the following schema:
 
 # As an example, you might define the following types in a file called schema.graphql
-<div class="bd-example"><pre><code>
+<pre><code>
 type BlogPost {
     id: String!
     body: String!
@@ -20,11 +20,11 @@ type BlogPost {
     title: String!
     updated_at: Date!
 }
-</pre></code></div>
+</code></pre>
 
 Then Sudograph would create the following queries and mutations for you:
 
-<div class="bd-example"><pre><code>
+<pre><code>
 type Query {
   readBlogPost(input: ReadBlogPostInput!): [BlogPost!]!
 }
@@ -35,13 +35,13 @@ type Mutation {
   deleteBlogPost(input: DeleteBlogPostInput!): [BlogPost!]!
   initBlogPost: Boolean!
 }
-</pre></code></div>
+</code></pre>
 
 There's a lot more being generated for you to get the above to work, but you're seeing the most important parts (the queries and mutations themselves).
 
 With the generated queries/mutations above, you could start writing code like this in any of your clients:
 
-<div class="bd-example"><pre><code>
+<pre><code>
 query {
     readBlogPost(input: {
         live: {
@@ -58,13 +58,13 @@ query {
         updated_at
     }
 }
-</pre></code></div>
+</code></pre>
 
 The query above will return all blog posts that are "live" (have been published).
 
 Creating a blog post would look something like this:
 
-<div class="bd-example"><pre><code>
+<pre><code>
 mutation {
     createBlogPost(input: {
         id: "0"
@@ -79,7 +79,7 @@ mutation {
         id
     }
 }
-</pre></code></div>
+</code></pre>
 
 ## Quick Start
 
@@ -89,7 +89,7 @@ If you ever want to see a concrete example of how to implement Sudograph, simply
 
 Let's imagine you've created a Rust canister called `graphql` in a directory called `graphql`. In the `graphql` directory you should have a `Cargo.toml` file. You'll need to add Sudograph as a dependency. For example:
 
-<div class="bd-example"><pre><code>
+<pre><code>
 [package]
 name = "graphql"
 version = "0.0.0"
@@ -102,11 +102,11 @@ crate-type = ["cdylib"]
 
 [dependencies]
 sudograph = "0.1.0"
-</pre></code></div>
+</code></pre>
 
 Next let's define our schema. In the `graphql/src` directory, let's add a file called `schema.graphql`:
 
-<div class="bd-example"><pre><code>
+<pre><code>
 # graphql/src/schema.graphql
 type BlogPost {
     id: String!
@@ -118,26 +118,26 @@ type BlogPost {
     title: String!
     updated_at: Date!
 }
-</pre></code></div>
+</code></pre>
 
 Your canister should be implemented as a Rust library crate, in this case the source code for our canister is found in `graphql/src/graphql.rs`. You only need to add two lines of code to this file to bootstrap your GraphQL database:
 
-<div class="bd-example"><pre><code>
+<pre><code>
 // graphql/src/graphql.rs
 use sudograph::graphql_database;
 
 graphql_database!("canisters/graphql/src/schema.graphql");
-</pre></code></div>
+</code></pre>
 
 You will also need to add a [Candid](https://sdk.dfinity.org/docs/candid-guide/candid-intro.html) file to `graphql/src`. Let's call it `graphql.did`:
 
-<div class="bd-example"><pre><code>
+<pre><code>
 # graphql/src/graphql.did
 service : {
     "graphql_query": (text) -> (text) query;
     "graphql_mutation": (text) -> (text);
 }
-</pre></code></div>
+</code></pre>
 
 Sudograph will automatically create two methods on your canister, the first is called `graphql_query`, which is a query method (will return quickly). The second is called `graphql_mutation`, which is an update method (will return more slowly). You should send all queries to `graphql_query` and all mutations to `graphql_mutation`. If you want the highest security guarantees, you can send all queries to `graphql_mutation`, they will simply take a few seconds to return.
 
