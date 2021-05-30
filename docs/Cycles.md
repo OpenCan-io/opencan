@@ -11,29 +11,29 @@ Tokens are minted by using the cycles wallet `wallet_call` feature which allows 
 Tokens can be returned to the WIC canister via a burn mechanism, which then returns an equal amount of cycles to a user defined canister (1WIC = 1T cycles). This allows developers to easily purchase WIC from secondary markets and have it easily send to their canisters. To burn tokens, the user must provide a canister ID and method (the **callback** function) which can accept the returned cycles.
 
 The callback must be of the following type:
-<div class="bd-example"><pre><code>
+<pre><code>
 type Callback = shared () -> async ();
-</pre></code></div>
+</code></pre>
 
 An example function that can be included in your canister is as follows:
-<div class="bd-example"><pre><code>
+<pre><code>
 public func accept() : async () {
     let available = Cycles.available();
     let accepted = Cycles.accept(available);
     assert (accepted == available);
 };
-</pre></code></div>
+</code></pre>
 
 This can be submitted to the burn function in the following form:
-<div class="bd-example"><pre><code>
+<pre><code>
 //Where ryjl3-tyaaa-aaaaa-aaaba-cai is the principal/canister id of your canister
 (func ryjl3-tyaaa-aaaaa-aaaba-cai.accept)
-</pre></code></div>
+</code></pre>
 
 ## Testing
 We create two canisters, our WIC canister which handles the burning/minting/token logic and a test canister which can receive returned cycles (via burning).
 
-<div class="bd-example"><pre><code>
+<pre><code>
 //Clean start (if you want)
 dfx start --clean --background
 
@@ -66,7 +66,7 @@ dfx canister call $WICCAN burn "(500_000_000_000:nat, (func \"$TESTCAN\".accept)
 dfx canister call $WICCAN myBalance
 dfx canister call $TESTCAN availableCycles
 dfx canister call $WICCAN availableCycles
-</pre></code></div>
+</code></pre>
 
 ##Preset Cycles Canister
 [Cycles](https://github.com/ALLiDoizCode/wrapped_cycles)

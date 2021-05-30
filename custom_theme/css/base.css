@@ -2,6 +2,36 @@
     max-width: 100%;
 }
 
+video {
+    max-width: 100%;
+}
+
+/* These pre selectors are hacks to get the */
+/* markdown version of ``` code blocks */
+/* to show bootstrap's css treatment */
+/* since it translates to wrapping text in */
+/* <pre><code>TEXT</pre></code> */
+/* and currently .bd-example gets this treatment */
+/* but i'm applying now to any <pre> block */
+pre {
+    position:relative;
+    padding:1rem;
+    margin:1rem -.75rem 0;
+    border:solid #dee2e6;
+    border-width:1px 0 0;
+}
+@media (min-width: 576px) {
+    pre { 
+        padding:1.5rem;
+        margin-right:0;
+        margin-left:0;
+        border-width:1px;
+        border-top-left-radius:.25rem;
+        border-top-right-radius:.25rem;
+    }
+}
+/* *************************** */
+
 a.navbar-brand img {
     width: 100px;
 }
