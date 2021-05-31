@@ -11,6 +11,7 @@ nav:
     - 'ICIP-721': 'ICIP-721.md'
     - "Cycles": 'Cycles.md'
     - "ICIP-1": 'ICIP-1.md'
+    - "Motoko-Token": 'motoko-token.md'
   - 'Tools':
     - 'fungible-tokens.md'
     - 'non-fungible-tokens.md'
